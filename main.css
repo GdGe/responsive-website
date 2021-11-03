@@ -90,6 +90,7 @@
       justify-content: space-between;
       padding: 16px;
       transition: all var(--animation-duration) ease-in-out;
+      z-index: 1;
   }
 
   #navbar.navbar--dark {
@@ -107,19 +108,21 @@
       display: flex;
   }
 
-.navbar__menu__item{
+ .navbar__menu__item{
     padding: 8px 12px;
     margin: 0 4px;
     color: var(--color-white);
     cursor: pointer;
 }
 
-.navbar__menu__item.active{
+ .navbar__menu__item.active{
     border: 1px solid var(--color-white);
     border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item:hover{
+ .navbar__menu__item:hover{
+    border:1px solid white;
+    border-radius: var(--size-border-radius);
     background-color: var(--color-dark-pink);
     border-radius: var(--size-border-radius);
 }
@@ -506,6 +509,7 @@
     flex-direction: column;
     text-align: center;
     width: 100%;
+    display: none;
   }
 
   .navbar__menu.open {
