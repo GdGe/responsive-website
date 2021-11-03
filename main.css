@@ -82,7 +82,9 @@
 
   /* Navbar */
   #navbar{
-      background-color: var(--color-pink);
+      position: fixed;
+      width: 100%;
+      background-color: transparent;
       display: flex;
       align-items: center;
       justify-content: space-between;
