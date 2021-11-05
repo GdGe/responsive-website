@@ -108,21 +108,20 @@
       display: flex;
   }
 
- .navbar__menu__item{
+.navbar__menu__item{
     padding: 8px 12px;
     margin: 0 4px;
     color: var(--color-white);
     cursor: pointer;
 }
 
- .navbar__menu__item.active{
+.navbar__menu__item.active{
     border: 1px solid var(--color-white);
     border-radius: var(--size-border-radius);
 }
 
- .navbar__menu__item:hover{
+.navbar__menu__item:hover{
     border:1px solid white;
-    border-radius: var(--size-border-radius);
     background-color: var(--color-dark-pink);
     border-radius: var(--size-border-radius);
 }
@@ -475,9 +474,13 @@
 }
 
 .navbar__toggle-btn{
+  position: absolute;
   color: var(--color-white);
   font-size: var(--font-medium);
-  right: 25px;
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  /* font-size: 24px; */
   display: none;
 }
 
