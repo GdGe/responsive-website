@@ -30,6 +30,7 @@
     --animation-duration: 300ms;
   }
   /* Universal tags */
+
   * {
     box-sizing: border-box;
   }
@@ -39,7 +40,8 @@
   }
   a {
     text-decoration: none;
-    color: var(--color-white);
+    /* color: var(--color-white); */
+    color: var(--color-black);
   }
   ul {
     padding-left: 0;
@@ -111,8 +113,11 @@
 .navbar__menu__item{
     padding: 8px 12px;
     margin: 0 4px;
-    color: var(--color-white);
+    /* color: var(--color-white); */
+    color: var(--color-black);
     cursor: pointer;
+    font-weight: bolder;
+    border: 1px solid transparent;
 }
 
 .navbar__menu__item.active{
