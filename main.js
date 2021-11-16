@@ -43,19 +43,26 @@ navbarToggleBtn.addEventListener("click", ()=>{
 });
 
 //home버튼 나타나게하는거
-const up = document.querySelector(".arrow-up");
-const arrowup = up.getBoundingClientRect().height;
+const arrowup = document.querySelector(".arrow-up")
 document.addEventListener("scroll", ()=>{
-     console.log(arrowup);
-    arrowup.style.opacity = 1 + window.screenY/arrowup;
+    console.log(1 - window.scrollY/homeHeight);
+    if(window.scrollY/homeHeight > 1){
+        arrowup.style.opacity = 1;
+    }
+    else{
+        arrowup.style.opacity = 0;
+    }
 });
 
-
 //home버튼 눌렀을때 위로 이동
+arrowup.addEventListener("click",()=> {
+    scrollIntoView("#home");
+});
+
 
 
 //함수
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({ behavior: "smooth"})
+    scrollTo.scrollIntoView({ behavior: "smooth"});
 }
