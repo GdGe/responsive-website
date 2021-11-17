@@ -45,12 +45,11 @@ navbarToggleBtn.addEventListener("click", ()=>{
 //home버튼 나타나게하는거
 const arrowup = document.querySelector(".arrow-up")
 document.addEventListener("scroll", ()=>{
-    console.log(1 - window.scrollY/homeHeight);
-    if(window.scrollY/homeHeight > 1){
-        arrowup.style.opacity = 1;
+    if(window.scrollY > homeHeight/2 ){
+        arrowup.classList.add("visible");
     }
     else{
-        arrowup.style.opacity = 0;
+        arrowup.classList.remove("visible");
     }
 });
 
@@ -59,6 +58,74 @@ arrowup.addEventListener("click",()=> {
     scrollIntoView("#home");
 });
 
+//프로젝트 js 부분
+// const workBtnContainer = document.querySelector(".work__categories");
+// const projectContainer = document.querySelector(".work__projects")
+// const projects = document.querySelectorAll(".project");
+// workBtnContainer.addEventListener("click", (e)=>{
+//     const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+//     if(filter == null){
+//         return;
+//     }
+//     projects.forEach((project)=>{
+//         if(filter === "*" || filter === project.dataset.type) {
+//             project.classList.remove("invisible"); //보이는 부분
+//         }else {
+//             project.classList.add("invisible"); // 안 보이는 부분
+//         }
+//     });
+//     const active = document.querySelector(".category__btn.seleted");
+//     if(active != null){
+//         active.classList.remove("selected");
+//     }
+//     e.target.classList.add("selected");
+//     projectContainer.classList.add("anim-out");
+//     setTimeout(()=>{
+//         projects.forEach((project)=>{
+//             if(filter === "*" || filter === project.dataset.type){
+//                 project.classList.remove("invisible");
+//             }else{
+//                 project.classList.add("invisible");
+//             }
+//         });
+//         projectContainer.classList.remove("anim-out");
+//     },300);
+// });
+
+
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projects.forEach((project) => {
+    if (filter === "*" || filter === project.dataset.type) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+  const active = document.querySelector(".category__btn.selected");
+  if (active != null) {
+    active.classList.remove("selected");
+  }
+  e.target.classList.add("selected");
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      console.log(project.dataset.type);
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
 
 
 //함수
